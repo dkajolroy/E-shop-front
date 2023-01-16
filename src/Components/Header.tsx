@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-
+import { useSelector } from "react-redux";
+import { RootState } from "../Store/Store";
 export default function Header() {
+  const { products } = useSelector((x: RootState) => x.cartState);
   const isMobile = useMediaQuery({ query: "(min-width: 576px)" });
 
   return (
@@ -28,10 +30,28 @@ export default function Header() {
               Home
             </Link>
             <Link
-              className="text-light px-3 py-2 text-decoration-none"
+              className="text-light position-relative px-3 py-2 text-decoration-none"
               to="/cart"
             >
               Cart
+              {products.length ? (
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "2px",
+                    right: "-2px",
+                    background: "black",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  {products.length}
+                </span>
+              ) : null}
             </Link>
             <Link
               className="text-light px-3 py-2 text-decoration-none"

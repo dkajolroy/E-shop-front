@@ -1,9 +1,11 @@
 import React from "react";
 import { ProductType } from "../utils/Interface";
 import { Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Store/CartSlice";
 export default function Product({ item }: { item: ProductType }) {
-  // const navigation = useNavigate();
+  const dispatch = useDispatch();
+
   return (
     <div className="col-md-3 col-sm-4 col-6">
       <div style={{ cursor: "pointer" }} className="shadow rounded">
@@ -36,7 +38,12 @@ export default function Product({ item }: { item: ProductType }) {
             </h2>
           </div>
         </Link>
-        <button className="btn btn-success">Add to cart</button>
+        <button
+          onClick={() => dispatch(addToCart(item))}
+          className="btn w-100 btn-success"
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );
