@@ -8,6 +8,8 @@ import OrderPage from "./Pages/OrderPage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import UserLayout from "./Layout/UserLayout";
+import NotFoundPage from "./Pages/NotFoundPage";
+import ViewProductPage from "./Pages/ViewProductPage";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/order" element={<OrderPage />} />
+            <Route path="/product/:id" element={<ViewProductPage />} />
+            <Route path="/*" element={<NotFoundPage />} />
           </Routes>
         </UserLayout>
       </BrowserRouter>

@@ -27,16 +27,28 @@ export default function Header() {
             <Link className="text-light px-3 py-2 text-decoration-none" to="/">
               Home
             </Link>
-            <Link className="text-light px-3 py-2 text-decoration-none" to="/">
+            <Link
+              className="text-light px-3 py-2 text-decoration-none"
+              to="/cart"
+            >
               Cart
             </Link>
-            <Link className="text-light px-3 py-2 text-decoration-none" to="/">
+            <Link
+              className="text-light px-3 py-2 text-decoration-none"
+              to="/login"
+            >
               Login
             </Link>
-            <Link className="text-light px-3 py-2 text-decoration-none" to="/">
+            <Link
+              className="text-light px-3 py-2 text-decoration-none"
+              to="/register"
+            >
               Register
             </Link>
-            <Link className="text-light px-3 py-2 text-decoration-none" to="/">
+            <Link
+              className="text-light px-3 py-2 text-decoration-none"
+              to="/account"
+            >
               Account
             </Link>
           </div>
