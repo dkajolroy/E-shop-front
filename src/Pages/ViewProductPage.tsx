@@ -42,6 +42,8 @@ export default function ViewProductPage() {
     );
   }
 
+  const selectData = Array.from(Array(10).keys());
+
   return (
     <div className="container ">
       <div className="my-4">
@@ -89,8 +91,34 @@ export default function ViewProductPage() {
             </div>
           </div>
           <div className="col-md-6">
-            <h4>{data?.title}</h4>
+            <div
+              style={{
+                display: "flex",
+                height: "100%",
+                justifyContent: "space-between",
+                flexDirection: "column",
+              }}
+            >
+              <div className="info">
+                <h4>{data?.title}</h4>
+                <h5>Price: ${data?.price}</h5>
+                <h6>Discount: {data?.discountPercentage}%</h6>
+                <h5>{data?.brand}</h5>
+                <h5>{data?.stock ? "In stock" : "Out of stock"}</h5>
+              </div>
+              <div className="action">
+                <select className="form-select w-25 mb-2">
+                  {selectData.map((item: number) => (
+                    <option key={item}>{item + 1}</option>
+                  ))}
+                </select>
+                <button className="btn w-25 btn-success">Add to cart</button>
+              </div>
+            </div>
           </div>
+        </div>
+        <div className="col my-4">
+          <p>{data?.description}</p>
         </div>
       </div>
     </div>

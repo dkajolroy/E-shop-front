@@ -9,18 +9,44 @@ export default function HomePage() {
     baseUrl + "/products",
     fetcher
   );
+
+  if (error) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          height: "80vh",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h2>Something Error</h2>
+      </div>
+    );
+  }
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          height: "80vh",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Spinner />
+      </div>
+    );
+  }
+
   return (
     <div className="container my-4">
       <div className="row gy-3">
-        {isLoading ? (
-          <Spinner color="tomato" />
-        ) : error ? (
-          <h2>Something Error</h2>
-        ) : (
-          data?.products.map((item, index) => {
-            return <Product item={item} key={index} />;
-          })
-        )}
+        {data?.products.map((item, index) => {
+          return <Product item={item} key={index} />;
+        })}
       </div>
     </div>
   );

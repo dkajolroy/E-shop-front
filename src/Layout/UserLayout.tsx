@@ -12,7 +12,14 @@ const UserLayout: React.FC<ChildrenElement> = ({ children }) => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
       <Header />
       {children}
       <Footer />
