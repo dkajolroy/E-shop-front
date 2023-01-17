@@ -1,15 +1,14 @@
-import React from "react";
-import { ProductType } from "../utils/Interface";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToCart } from "../Store/CartSlice";
+import { ProductType } from "../utils/Interface";
 export default function Product({ item }: { item: ProductType }) {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   return (
     <div className="col-md-3 col-sm-4 col-6">
       <div style={{ cursor: "pointer" }} className="shadow rounded">
-        <Link preventScrollReset={true} to={`/product/${item.id}`}>
+        <div onClick={() => navigate(`/product/${item.id}`)}>
           <div style={{ height: "200px" }} className="d-flex">
             <img
               style={{
@@ -37,7 +36,7 @@ export default function Product({ item }: { item: ProductType }) {
               {item.title.length > 20 ? "..." : ""}
             </h2>
           </div>
-        </Link>
+        </div>
         <button
           onClick={() => dispatch(addToCart(item))}
           className="btn w-100 btn-success"

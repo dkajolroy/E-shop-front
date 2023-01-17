@@ -1,14 +1,27 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import useSwr from "swr";
 import Product from "../Components/Product";
-import { fetcher, baseUrl } from "../utils/Helpers";
+import { baseUrl, fetcher } from "../utils/Helpers";
 import { ProductInterface } from "../utils/Interface";
 export default function HomePage() {
+  const [pagination, setPagination] = useState<{ limit: number; skip: number }>(
+    { limit: 12, skip: 0 }
+  );
   const { data, error, isLoading } = useSwr<ProductInterface, Error>(
-    baseUrl + "/products",
+    baseUrl + `/products?limit=${pagination.limit}&skip=${pagination.skip}`,
     fetcher
   );
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const { scrollTop, clientHeight, scrollHeight } =
+        document.documentElement;
+      if (scrollTop + clientHeight > scrollHeight - 5) {
+        setPagination((prev) => ({ ...prev, limit: prev.limit + 8 }));
+      }
+    });
+  }, []);
 
   if (error) {
     return (
