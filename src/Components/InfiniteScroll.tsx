@@ -5,7 +5,7 @@ type Props ={
     bottomToActionPosition?:number;
     getDataLength:number
 }
-const InfiniteScrollAction = (props:Props) => {
+const InfiniteScroll = (props:Props) => {
 
     const {callback,getDataLength,bottomToActionPosition}=props
     const minus = bottomToActionPosition||5
@@ -26,4 +26,4 @@ const InfiniteScrollAction = (props:Props) => {
     );
 };
 
-export default InfiniteScrollAction;
+export default InfiniteScroll;

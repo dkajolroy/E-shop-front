@@ -4,11 +4,13 @@ import useSwr from "swr";
 import Product from "../Components/Product";
 import { baseUrl, fetcher } from "../utils/Helpers";
 import {ProductInterface, ProductType} from "../utils/Interface";
-import InfiniteScrollAction from "../Components/InfiniteScrollAction";
+import InfiniteScroll from "../Components/InfiniteScroll";
+import Category from "../Components/Category";
 export default function HomePage() {
   const [pagination, setPagination] = useState<{ limit: number; skip: number }>(
     { limit: 12, skip: 0 }
   );
+
     const [product, setProduct] = useState<ProductType[]>([]);
     const { data, error, isLoading } = useSwr<ProductInterface, Error>(
     baseUrl + `/products?limit=${pagination.limit}&skip=${pagination.skip}`,
@@ -20,6 +22,7 @@ export default function HomePage() {
           setProduct(data.products)
       }
     }, [data]);
+
 
 
 const callback=()=>{
@@ -61,7 +64,9 @@ const callback=()=>{
 
   return (
     <div className="container my-4">
-      <InfiniteScrollAction bottomToActionPosition={150} getDataLength={product.length} callback={callback}>
+        <h4>Category</h4>
+        <Category/>
+      <InfiniteScroll bottomToActionPosition={150} getDataLength={product.length} callback={callback}>
           <div className="row gy-3">
               {product.map((item, index) => {
                   return <Product item={item} key={index} />;
@@ -79,7 +84,7 @@ const callback=()=>{
                       <Spinner />
                   </div>:null
           }
-      </InfiniteScrollAction>
+      </InfiniteScroll>
     </div>
   );
 }
