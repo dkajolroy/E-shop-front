@@ -3,25 +3,29 @@ import { Spinner } from "react-bootstrap";
 import useSwr from "swr";
 import Product from "../Components/Product";
 import { baseUrl, fetcher } from "../utils/Helpers";
-import { ProductInterface } from "../utils/Interface";
+import {ProductInterface, ProductType} from "../utils/Interface";
+import InfiniteScrollAction from "../Components/InfiniteScrollAction";
 export default function HomePage() {
   const [pagination, setPagination] = useState<{ limit: number; skip: number }>(
     { limit: 12, skip: 0 }
   );
-  const { data, error, isLoading } = useSwr<ProductInterface, Error>(
+    const [product, setProduct] = useState<ProductType[]>([]);
+    const { data, error, isLoading } = useSwr<ProductInterface, Error>(
     baseUrl + `/products?limit=${pagination.limit}&skip=${pagination.skip}`,
     fetcher
   );
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const { scrollTop, clientHeight, scrollHeight } =
-        document.documentElement;
-      if (scrollTop + clientHeight > scrollHeight - 5) {
-        setPagination((prev) => ({ ...prev, limit: prev.limit + 8 }));
+    useEffect(() => {
+      if (data){
+          setProduct(data.products)
       }
-    });
-  }, []);
+    }, [data]);
+
+
+const callback=()=>{
+    setPagination(prevState => ({...prevState,limit:product.length+12}))
+}
+
 
   if (error) {
     return (
@@ -38,29 +42,44 @@ export default function HomePage() {
       </div>
     );
   }
-  if (isLoading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          height: "80vh",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Spinner />
-      </div>
-    );
-  }
+    if (!product&&isLoading) {
+        return (
+            <div
+                style={{
+                    display: "flex",
+                    height: "80vh",
+                    width: "100%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <Spinner />
+            </div>
+        );
+    }
+
 
   return (
     <div className="container my-4">
-      <div className="row gy-3">
-        {data?.products.map((item, index) => {
-          return <Product item={item} key={index} />;
-        })}
-      </div>
+      <InfiniteScrollAction bottomToActionPosition={150} getDataLength={product.length} callback={callback}>
+          <div className="row gy-3">
+              {product.map((item, index) => {
+                  return <Product item={item} key={index} />;
+              })}
+          </div>
+          {
+              product&&isLoading?
+                  <div
+                      style={{
+                          display: "flex",
+                          width: "100%",
+                          justifyContent: "center",
+                      }}
+                  >
+                      <Spinner />
+                  </div>:null
+          }
+      </InfiniteScrollAction>
     </div>
   );
 }
