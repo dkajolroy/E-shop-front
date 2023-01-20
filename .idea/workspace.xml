@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c037995d-8252-4f8a-8486-5f8911996f53" name="Changes" comment="added category component">
+      <change beforePath="$PROJECT_DIR$/src/Pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/RegisterPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/RegisterPage.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="283e84fd-08a4-4244-81d2-2567fde87fa6" />
+        <option name="url" value="https://github.com/ikajolroy/E-shop-front.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KSEY8dGIRpoehyo51FHBJk0ANK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shrik/OneDrive/Desktop/backBandler&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\shrik\\OneDrive\\Desktop\\ecom_with_typescript\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c037995d-8252-4f8a-8486-5f8911996f53" name="Changes" comment="" />
+      <created>1673959628211</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673959628211</updated>
+      <workItem from="1673959629488" duration="229000" />
+      <workItem from="1673959878940" duration="1149000" />
+      <workItem from="1673961144372" duration="412000" />
+      <workItem from="1673961574969" duration="877000" />
+      <workItem from="1673962478217" duration="130000" />
+      <workItem from="1673962627606" duration="53000" />
+      <workItem from="1673963319507" duration="118000" />
+      <workItem from="1673963452704" duration="254000" />
+      <workItem from="1673963724052" duration="1542000" />
+      <workItem from="1673968086892" duration="27000" />
+      <workItem from="1673975587212" duration="67000" />
+      <workItem from="1673975676508" duration="1530000" />
+      <workItem from="1674025621566" duration="17504000" />
+      <workItem from="1674049405399" duration="3000" />
+      <workItem from="1674196882071" duration="641000" />
+    </task>
+    <task id="LOCAL-00001" summary="add remove increment decrement quantity">
+      <created>1673975875773</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673975875773</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix bug api infinite scrolling api call">
+      <created>1674042161962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674042161962</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added category component">
+      <created>1674046780082</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674046780082</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add remove increment decrement quantity" />
+    <MESSAGE value="fix bug api infinite scrolling api call" />
+    <MESSAGE value="added category component" />
+    <option name="LAST_COMMIT_MESSAGE" value="added category component" />
+  </component>
+</project>
